@@ -15,6 +15,6 @@ export default {
   },
   //deletes book from saved books
   deleteBook: (id) => {
-    axios.delete("/api/saved/delete/"+id)
+    return axios.delete("/api/saved/delete/"+id)
   }
 }

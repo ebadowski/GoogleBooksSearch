@@ -17,25 +17,29 @@ class Saved extends Component {
     }
 
 
-    getBooks(query) {
+    getBooks() {
         API.getsavedBooks()
             .then((response) => {
                 console.log(response);
-                //console.log(response.data.items[0]);
-                 this.setState({ bookList: response.data })
-                 this.setState({ waiting: false });
-                //this.sortUsers(response.data)
+                this.setState({ bookList: response.data, waiting: false });
             })
             .catch(function (error) {
                 console.log(error);
             });
+    }
+    updateStateOnDelete(id) {
+        //console.log(API.deleteBook(id))
+        API.deleteBook(id).then(() => {
+            this.setState({ bookList: [] })
+            this.getBooks()
+        })
     }
 
     render() {
         return (
             <div>
 
-                
+
 
                 {
                     this.state.waiting
@@ -59,13 +63,16 @@ class Saved extends Component {
                                         key={i}
                                         parentType="saved"
                                         book={book}
+                                        parent={this}
                                     />
                                 ))}
                             </ul>
-                            : <div>
-                                <p>No Saved Books</p>
-                                <a href="/search" className="waves-effect waves-teal btn-flat">Save Some Books</a>
-                            </div>
+                            : !this.state.waiting
+                                ? null
+                                : <div>
+                                    <p>No Saved Books</p>
+                                    <a href="/search" className="waves-effect waves-teal btn-flat">Save Some Books</a>
+                                </div>
                 }
 
             </div >

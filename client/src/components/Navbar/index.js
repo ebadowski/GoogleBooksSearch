@@ -5,7 +5,7 @@ function Navbar() {
     return (
         <nav>
             <div className="nav-wrapper grey lighten-4 grey-text text-darken-3">
-                <a href="#!" className="brand-logo left grey-text text-darken-3"><i className="material-icons ">cloud</i>Google Book Search</a>
+                <a href="#!" className="brand-logo left grey-text text-darken-3"><i className="material-icons ">bookmark_border</i>Google Book Search</a>
                 <ul className="right">
                     <li>
                         <Link
