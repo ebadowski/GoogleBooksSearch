@@ -45,7 +45,7 @@ class Search extends Component {
     render() {
         return (
             <div>
-
+                <br />
                 <div className="row">
                     <form className="col s12" onSubmit={this.handleFormSubmit}>
                         <div className="row">

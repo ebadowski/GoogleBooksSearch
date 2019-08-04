@@ -46,7 +46,7 @@ function BookItem(props) {
                 {
                     props.parentType === "search"
                         ? <a href="#!" onClick={() => API.saveBook(props.book)} className=""><i className="material-icons">save</i></a>
-                        : <a href="#!" onClick={() => API.deleteBook(props.book.id)} className=""><i className="material-icons">delete_forever</i></a>
+                        : <a href="#!" onClick={() => API.deleteBook(props.book.id)} className=""><i className="material-icons" style={{color:"red"}}>delete_forever</i></a>
                 }
             </div>
         </li>
