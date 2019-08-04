@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import M from "materialize-css";
 import API from "../../../utils/API";
-import BookItem from "./local-components/BookItem";
+import BookItem from "../../BookItem";
 //import Autocomplete from "./local-components/Autocomplete";
 import axios from "axios";
 
@@ -80,6 +80,7 @@ class Search extends Component {
                                 {this.state.bookList.map((book, i) => (
                                     <BookItem
                                         key={i}
+                                        parentType="search"
                                         {...book}
                                     />
                                 ))}
