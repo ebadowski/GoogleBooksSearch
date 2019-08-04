@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import M from "materialize-css";
 import API from "../../../utils/API";
 import BookItem from "../../BookItem";
-//import Autocomplete from "./local-components/Autocomplete";
-import axios from "axios";
 
 
 class Search extends Component {
@@ -81,7 +79,7 @@ class Search extends Component {
                                     <BookItem
                                         key={i}
                                         parentType="search"
-                                        {...book}
+                                        book={book}
                                     />
                                 ))}
                             </ul>

@@ -6,7 +6,10 @@ export default {
     return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + title + "&maxResults=25");
   },
   //saves book from search to db
-  saveBook: (id) => {
-    axios.post("/search/save/"+id)
+  saveBook: (book) => {
+    axios.post('/api/search/save', book);
+  },
+  deleteBook: (id) => {
+    axios.delete("/api/saved/delete/"+id)
   }
 }
