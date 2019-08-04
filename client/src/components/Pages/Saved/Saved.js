@@ -67,7 +67,7 @@ class Saved extends Component {
                                     />
                                 ))}
                             </ul>
-                            : !this.state.waiting
+                            : this.state.waiting
                                 ? null
                                 : <div>
                                     <p>No Saved Books</p>
